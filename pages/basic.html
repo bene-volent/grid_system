@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +9,36 @@
     <style>
         @import url('../base.css');
         @import url("./basic-grid.css");
-</style>
+    </style>
 </head>
+
 <body>
-    <h1>Auto-fill</h1>
-
-    <section class="basic-grid grid-auto-fill">
+    <h1>Dynamic Grid Sizing</h1>
+    <section class="basic-grid grid-auto-fill" style="padding:1rem; margin: 1rem; outline: 2px solid #fff; outline-offset:0.5rem">
 
         <div class="card">1</div>
         <div class="card">2</div>
         <div class="card">3</div>
-        <!-- <div class="card">4</div>
+        <div class="card">4</div>
+    <div class="card">5</div>
+    <div class="card">6</div>
+    <div class="card">7</div>
+    <div class="card">8</div>
+    <div class="card">9</div>
+    <div class="card">10</div>
+    <div class="card">11</div>
+    <div class="card">12</div>
+    </section>
+    <fieldset>
+        <legend style="font-size: 2rem;">Difference Between Autofill and AutoFit</legend>
+        <h3>Auto-fill</h3>
+
+        <section class="basic-grid grid-auto-fill">
+
+            <div class="card">1</div>
+            <div class="card">2</div>
+            <div class="card">3</div>
+            <!-- <div class="card">4</div>
         <div class="card">5</div>
         <div class="card">6</div>
         <div class="card">7</div>
@@ -27,13 +47,13 @@
         <div class="card">10</div>
         <div class="card">11</div>
         <div class="card">12</div> -->
-    </section>
-    <h1>Auto-fit</h1>
-    <section class="basic-grid grid-auto-fit">
-        <div class="card">1</div>
-        <div class="card">2</div>
-        <div class="card">3</div>
-        <!-- <div class="card">4</div>
+        </section>
+        <h3>Auto-fit</h3>
+        <section class="basic-grid grid-auto-fit">
+            <div class="card">1</div>
+            <div class="card">2</div>
+            <div class="card">3</div>
+            <!-- <div class="card">4</div>
         <div class="card">5</div>
         <div class="card">6</div>
         <div class="card">7</div>
@@ -42,6 +62,11 @@
         <div class="card">10</div>
         <div class="card">11</div>
         <div class="card">12</div> -->
-    </section>
+        </section>
+    </fieldset>
+
+
+
 </body>
+
 </html>

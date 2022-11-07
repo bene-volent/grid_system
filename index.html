@@ -39,6 +39,33 @@
             object-fit: contain;
             margin: 1rem auto;
         }
+
+        #quality-alert{
+            text-align: center;
+            background-color: rgb(61, 60, 60);
+            color: white;
+            border-color: black;
+            border-radius: 10px;
+            width: clamp(300px,70vh,1000px);
+        }
+        .alert-close-button{
+            background-color: hsl(219, 79%, 66%);
+            border: 2px solid hsl(219, 79%, 66%);
+            color: white;
+            display: block;
+            margin: 1rem auto 0;
+            width: clamp(100px,10vh,240px);
+            border-radius: 10px;
+            height: 2rem;
+            transition: all 350ms ease-in-out;
+        }
+        .alert-close-button:hover
+        {
+            background-color: hsl(219, 50%, 55%);
+            transform: scale(1.04);
+        }
+
+
         @keyframes cardLoad {
             from{
                 opacity: 0;
@@ -51,10 +78,18 @@
                 scale: 100%;
             }
         }
+
     </style>
+    
 </head>
 
 <body>
+
+    <dialog id="quality-alert">
+        Best Experienced With Desktop Browsers
+        <button class="alert-close-button">Close</button>
+    </dialog>
+
     <h1>CSS Grid Demonstration: Fireship.io</h1>
     <section class="main-grid">
         <div class="card" style="--order:1">
@@ -71,6 +106,16 @@
             <img src="./assets/animate.jpg" alt="Basic Screenshot">
             Animated Grid System</a></div>
     </section>
+    <script >
+        const dialogBox = document.getElementById('quality-alert');
+        const dialogButton = dialogBox.querySelector('.alert-close-button')
+        if (typeof dialogBox.showModal==="function"){
+            dialogBox.showModal()
+            dialogButton.addEventListener('click',_=>dialogBox.close())
+        }
+    
+    </script>
 </body>
+
 
 </html>
