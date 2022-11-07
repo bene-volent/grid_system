@@ -47,6 +47,7 @@
             border-color: black;
             border-radius: 10px;
             width: clamp(300px,70vh,1000px);
+            /* z-index:99; */
         }
         .alert-close-button{
             background-color: hsl(219, 79%, 66%);
@@ -111,7 +112,11 @@
         const dialogButton = dialogBox.querySelector('.alert-close-button')
         if (typeof dialogBox.showModal==="function"){
             dialogBox.showModal()
-            dialogButton.addEventListener('click',_=>dialogBox.close())
+            document.querySelector('body').style.filter='blur(3px)'
+            document.querySelector('body').style.transition='filter 700ms ease-out'
+            dialogButton.addEventListener('click',_=>{dialogBox.close();
+                document.querySelector('body').style.filter=''
+            })
         }
     
     </script>
