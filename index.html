@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid CSS Magic</title>
+    <style>
+        @import url("./base.css");
+
+        h1 {
+            margin: 2rem 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: currentColor;
+            width: 100%;
+            text-align: center;
+        }
+
+        .card {
+            font-size: 2rem;
+            animation: cardLoad 500ms ease-out backwards;
+            animation-delay: calc(var(--order) * 200ms);
+        }
+
+        .main-grid {
+            display: grid;
+            gap: 1rem;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-rows: auto;
+        }
+        img{
+            display: block;
+            width: 300px;
+            object-fit: contain;
+            margin: 1rem auto;
+        }
+        @keyframes cardLoad {
+            from{
+                opacity: 0;
+                transform: translateY(-50px);
+                scale: 0;
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0);
+                scale: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Grid Demonstration: Fireship.io</h1>
+    <section class="main-grid">
+        <div class="card" style="--order:1">
+            <a href="/pages/basic.html">
+            <img src="./assets/basic.jpg" alt="Basic Screenshot">
+            Basic Grid System</a>
+        </div>
+        <div class="card" style="--order:2">
+            <a href="/pages/photo.html">
+            <img src="./assets/photo.jpg" alt="Basic Screenshot">
+            Dynamic Grid System</a></div>
+        <div class="card" style="--order:3">
+            <a href="/pages/animate.html">
+            <img src="./assets/animate.jpg" alt="Basic Screenshot">
+            Animated Grid System</a></div>
+    </section>
+</body>
+
+</html>
